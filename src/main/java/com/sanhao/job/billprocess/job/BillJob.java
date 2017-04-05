@@ -3,6 +3,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import com.sanhao.job.billprocess.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +15,6 @@ import com.sanhao.job.billprocess.config.Config;
 
 import com.sanhao.job.lesson.dao.PackageDAO;
 import com.sanhao.job.billprocess.dao.UserDAO;
-import com.sanhao.job.billprocess.model.ApplyCash;
-import com.sanhao.job.billprocess.model.Bill;
-import com.sanhao.job.billprocess.model.BillDetail;
-import com.sanhao.job.billprocess.model.BillInfo;
-import com.sanhao.job.billprocess.model.Coupon;
-import com.sanhao.job.billprocess.model.CouponTemplate;
-import com.sanhao.job.billprocess.model.FeeLog;
-import com.sanhao.job.billprocess.model.Order;
-import com.sanhao.job.billprocess.model.OrderCT;
-import com.sanhao.job.billprocess.model.Pay;
-import com.sanhao.job.billprocess.model.User;
 import com.sanhao.job.lesson.model.Package;
 
 public class BillJob {
@@ -74,6 +64,18 @@ public class BillJob {
 
         System.out.println(userDAO.getName(1));
         System.out.println(packageDAO.getCourseName(1));
+
+        User user = new User();
+        user.setUser_id(11);
+        user.setUser_name("heha");
+
+        System.out.println(userDAO.insert2(user));
+        System.out.println(user.getId());
+        System.out.println(userDAO.insert2(user));
+        System.out.println(user.getId());
+        System.out.println(userDAO.insert2(user));
+        System.out.println(user.getId());
+
     }
 
 
